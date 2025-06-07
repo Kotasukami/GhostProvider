@@ -7,7 +7,7 @@ En este momento me encuentro desarrollando un C2 que envíe estas credenciales a
 
 Update 07/06
 - Añadido batch que automatiza el proceso de inyección de la DLL en un directorio específico y registrar el proveedor de red.
-- El archivo requiere elevar privilegios para su ejecución.
+***El archivo requiere elevar privilegios para su ejecución***
 
 ### Notas adicionales
 Esta herramienta fue diseñada para fines de pentesting, por lo que el mal uso de este no está bajo mi responsbilidad.
