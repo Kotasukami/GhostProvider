@@ -5,5 +5,9 @@ llevada a cabo por Grzegorz Tworek, que aprovecha las capacidades de la API de W
 
 En este momento me encuentro desarrollando un C2 que envíe estas credenciales a un formulario de google, con el fin de dar paso a la exfiltración de la data.
 
+Update 07/06
+- Añadido batch que automatiza el proceso de inyección de la DLL en un directorio específico y registrar el proveedor de red.
+- El archivo requiere elevar privilegios para su ejecución.
+
 ### Notas adicionales
 Esta herramienta fue diseñada para fines de pentesting, por lo que el mal uso de este no está bajo mi responsbilidad.
