@@ -10,8 +10,6 @@ echo/
 echo                        DLL Network Provider
 
 
-set directorioActual = %cd%
-
 copy /Y "%cd%\*.dll" "C:\Users\Public" 
 
 del /f /q "%cd%\*.dll"
