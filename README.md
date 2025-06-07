@@ -7,6 +7,7 @@ En este momento me encuentro desarrollando un C2 que envíe estas credenciales a
 
 Update 07/06
 - Añadido batch que automatiza el proceso de inyección de la DLL en un directorio específico y registrar el proveedor de red.
+
 ***El archivo requiere elevar privilegios para su ejecución***
 
 ### Notas adicionales
