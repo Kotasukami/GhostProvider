@@ -1,5 +1,3 @@
-@echo off
-
 Write-Host "
  _____ _               _  ______               _     _           
 |  __ \ |             | | | ___ \             (_)   | |          
@@ -13,7 +11,6 @@ Write-Host "
                                 "
 
 
-copy /Y "%cd%\*.dll" "C:\Users\Public" 
 $directorioActual = Get-Location
 
 Copy-Item "$directorioActual\*.dll" "<path>"
